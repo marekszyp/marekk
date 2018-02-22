@@ -12,7 +12,7 @@ float funkcja(struct trojkat x)
     float suma = x.a+x.b+x.c;
     return suma;
 }
-float funkcja2(struct trojkat troj1, struct trojkat *troj2)
+void funkcja2(struct trojkat troj1, struct trojkat *troj2)
 {
     *troj2=troj1;
 
