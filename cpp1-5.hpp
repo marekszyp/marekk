@@ -1,5 +1,5 @@
-#ifndef HEADER_HPP_INCLUDED
-#define HEADER_HPP_INCLUDED
+#ifndef CPP1-5_HPP_INCLUDED
+#define CPP1-5_HPP_INCLUDED
 
 class Point
 {
@@ -23,4 +23,4 @@ public:
 	}
 };
 
-#endif // HEADER_HPP_INCLUDED
+#endif // CPP1-5_HPP_INCLUDED
