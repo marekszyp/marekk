@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+
+int main(int argc, char *argv[])
+{
+    string n1;
+    char najm = 'z', najw = 'a';
+
+    cin >> n1;
+    transform(n1.begin(), n1.end(), n1.begin(), ::tolower);
+    cout<<n1<<endl<<(short)n1[1]<<endl;
+    short ascii;
+    for(int i = 0; i < n1.size(); i++)
+    {
+        ascii = (short)n1[i];
+        if(97<=ascii && ascii<=122)
+            cout<<"litera"<<endl;
+        else
+            cout<<"inny znak"<<endl;
+        if(n1[i] < najm)
+        {
+            najm=n1[i];
+        }
+        if(n1[i] > najw)
+        {
+            najw=n1[i];
+        }
+
+    }
+    cout<<najm<<", "<<najw<<endl;
+
+    return 0;
+}
