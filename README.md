@@ -1,1 +1,2 @@
-# marekk
+# Marek Szypulski
+Zadania w C++
