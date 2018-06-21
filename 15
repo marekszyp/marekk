@@ -1,0 +1,60 @@
+#include <iostream>
+
+using namespace std;
+
+class Klasa
+{
+private:
+    static int nextId;
+    int id;
+public:
+    Klasa() : id(++nextId)
+    {
+        cout << "Nowy obiekt o id " << id << endl;
+    }
+    ~Klasa()
+    {
+        cout << "Destruktor o obiektu o id " << id << endl;
+    }
+    int getId()
+    {
+        return id;
+    }
+    int test(int arg)
+
+{
+    cout<<"Metoda testowa obiektu o id " <<id<< endl;
+    return arg + 8;
+    }
+};
+
+class KlasaUsuwajaca
+{
+public:
+    void operator()(Klasa *ptr)
+    {
+        cout << "Usuwam obiekt o id " << ptr->getId()<<endl;
+        delete ptr;
+    }
+};
+ int Klasa::nextId = 0;
+
+ void ftestowa(shared_ptr<Klasa> ptrf)
+ {
+     cout<<"Funkcja testowa"<<endl;
+     cout<<ptrf->test(0)<<endl;
+ }
+
+int main(int argc, char *argv[])
+{
+    /*unique_ptr<Klasa> ptr(new Klasa);
+    cout<<ptr->test(3)<<endl;
+    ptr.reset(new Klasa);
+    cout<<(*ptr).getId()<<endl;
+    return 0;*/
+    shared_ptr<Klasa> ptr1(new Klasa);
+    cout<<ptr1->test(3)<<endl;
+    ftestowa(ptr1)  ;
+    cout<<"Koniec"<<endl;
+    return 0;
+}
